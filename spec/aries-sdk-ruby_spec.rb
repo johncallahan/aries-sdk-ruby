@@ -187,7 +187,7 @@ describe "aries-sdk-ruby" do
     ssresult = steward_did.sign_and_submit_request(pool,wallet,nym)
 #    puts ssresult
 
-    verkey = pool.key_for_did(otherWallet,trustee_did)
+    verkey = pool.key_for_did(otherWallet,trustee_did.get_did)
     expect(verkey).to eq(trustee_did.get_verkey)
 
     wallet.close
@@ -225,7 +225,7 @@ describe "aries-sdk-ruby" do
 
 #    forget to sign and submit on the ledger here on purpose
 
-    expect{pool.key_for_did(otherWallet,trustee_did)}.to raise_error(/Wallet item not found/)
+    expect{pool.key_for_did(otherWallet,trustee_did.get_did)}.to raise_error(/Wallet item not found/)
 
     wallet.close
     wallet.delete

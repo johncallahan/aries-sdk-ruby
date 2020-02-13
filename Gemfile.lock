@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    aries-sdk-ruby (0.0.8)
+    aries-sdk-ruby (0.0.9)
       helix_runtime (~> 0.7.5)
 
 GEM

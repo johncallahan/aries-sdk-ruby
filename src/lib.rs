@@ -76,8 +76,8 @@ ruby! {
             pool::create_pool_ledger_config(&self.name, Some(&pool_config.to_string())).wait().unwrap();
         }
 
-	def key_for_did(&self, wallet: &AriesWallet, value: &AriesDID) -> String {
-	    return did::key_for_did(self.handle, wallet.handle, &value.did).wait().unwrap();
+	def key_for_did(&self, wallet: &AriesWallet, value: String) -> String {
+	    return did::key_for_did(self.handle, wallet.handle, &value).wait().unwrap();
 	}
 
         def open(&mut self) {
